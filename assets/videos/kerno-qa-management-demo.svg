@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Kerno QA management demo poster">
+  <rect width="1280" height="720" fill="#151713"/>
+  <rect x="74" y="58" width="1132" height="604" rx="30" fill="#f8f4ea"/>
+  <text x="122" y="132" fill="#3b3b38" font-family="Inter,Arial" font-size="36" font-weight="800">QA Management</text>
+  <rect x="122" y="174" width="628" height="398" rx="24" fill="#fffefa"/>
+  <g font-family="Inter,Arial" font-size="24" font-weight="800">
+    <text x="166" y="238" fill="#6f6d67">Generated checklist</text>
+    <text x="210" y="312" fill="#3b3b38">Viscosity within range</text>
+    <text x="210" y="388" fill="#3b3b38">Fill weight verified</text>
+    <text x="210" y="464" fill="#3b3b38">Label inspection complete</text>
+  </g>
+  <g fill="none" stroke="#0aa79d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M158 302l18 18 36-44"/><path d="M158 378l18 18 36-44"/></g>
+  <path d="M158 454l48 48M206 454l-48 48" stroke="#ee120c" stroke-width="8" stroke-linecap="round"/>
+  <rect x="804" y="206" width="286" height="240" rx="24" fill="#20221d"/>
+  <text x="850" y="274" fill="#fffefa" font-family="Inter,Arial" font-size="28" font-weight="800">Manager PIN</text>
+  <g fill="#3b3b38"><rect x="850" y="320" width="42" height="42" rx="10"/><rect x="910" y="320" width="42" height="42" rx="10"/><rect x="970" y="320" width="42" height="42" rx="10"/><rect x="1030" y="320" width="42" height="42" rx="10"/></g>
+  <rect x="804" y="492" width="286" height="58" rx="29" fill="#0aa79d"/>
+  <text x="866" y="529" fill="#fffefa" font-family="Inter,Arial" font-size="20" font-weight="900">Batch Completed</text>
+</svg>

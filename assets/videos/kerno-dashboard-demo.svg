@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Kerno dashboard demo poster">
+  <rect width="1280" height="720" fill="#12140f"/>
+  <path d="M0 0h1280v720H0z" fill="url(#g)"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0aa79d" stop-opacity=".25"/>
+      <stop offset=".45" stop-color="#1b1c18"/>
+      <stop offset="1" stop-color="#ff8a12" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+  <rect x="70" y="58" width="1140" height="604" rx="30" fill="#f8f4ea"/>
+  <rect x="102" y="96" width="188" height="528" rx="20" fill="#20221d"/>
+  <text x="132" y="140" fill="#fffefa" font-family="Inter,Arial" font-size="28" font-weight="800">Kerno</text>
+  <g fill="#6f6d67" font-family="Inter,Arial" font-size="18" font-weight="700">
+    <text x="132" y="205">Dashboard</text><text x="132" y="256">Batches</text><text x="132" y="307">QA</text><text x="132" y="358">Inventory</text>
+  </g>
+  <rect x="326" y="96" width="836" height="72" rx="18" fill="#fffefa"/>
+  <text x="358" y="142" fill="#3b3b38" font-family="Inter,Arial" font-size="30" font-weight="800">Dashboard</text>
+  <g>
+    <rect x="326" y="198" width="250" height="134" rx="20" fill="#fffefa"/><rect x="606" y="198" width="250" height="134" rx="20" fill="#fffefa"/><rect x="886" y="198" width="276" height="134" rx="20" fill="#fffefa"/>
+    <text x="354" y="244" fill="#6f6d67" font-family="Inter,Arial" font-size="18" font-weight="800">Batches</text><text x="354" y="292" fill="#0aa79d" font-family="Inter,Arial" font-size="52" font-weight="800">14</text>
+    <text x="634" y="244" fill="#6f6d67" font-family="Inter,Arial" font-size="18" font-weight="800">Efficiency</text><text x="634" y="292" fill="#0aa79d" font-family="Inter,Arial" font-size="52" font-weight="800">87%</text>
+    <text x="914" y="244" fill="#6f6d67" font-family="Inter,Arial" font-size="18" font-weight="800">Stock risk</text><text x="914" y="292" fill="#0aa79d" font-family="Inter,Arial" font-size="52" font-weight="800">$0</text>
+  </g>
+  <rect x="326" y="366" width="520" height="228" rx="22" fill="#fffefa"/>
+  <path d="M370 532 C450 430 520 470 600 390 S760 468 810 410" fill="none" stroke="#0aa79d" stroke-width="12" stroke-linecap="round"/>
+  <path d="M370 560 C455 520 520 545 600 500 S760 535 810 480" fill="none" stroke="#ff8a12" stroke-width="10" stroke-linecap="round"/>
+  <rect x="876" y="366" width="286" height="228" rx="22" fill="#fffefa"/>
+  <text x="910" y="412" fill="#3b3b38" font-family="Inter,Arial" font-size="24" font-weight="800">Activity</text>
+  <g fill="#f5f2ec"><rect x="910" y="442" width="210" height="36" rx="10"/><rect x="910" y="494" width="188" height="36" rx="10"/><rect x="910" y="546" width="222" height="36" rx="10"/></g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Kerno inventory management demo poster">
+  <rect width="1280" height="720" fill="#12140f"/>
+  <rect x="70" y="58" width="1140" height="604" rx="30" fill="#f8f4ea"/>
+  <text x="118" y="132" fill="#3b3b38" font-family="Inter,Arial" font-size="36" font-weight="800">Inventory Management</text>
+  <rect x="118" y="176" width="270" height="412" rx="22" fill="#fffefa"/>
+  <rect x="430" y="176" width="270" height="412" rx="22" fill="#fffefa"/>
+  <rect x="742" y="176" width="348" height="412" rx="22" fill="#fffefa"/>
+  <g font-family="Inter,Arial" font-weight="800">
+    <text x="154" y="232" fill="#6f6d67" font-size="20">Vendors</text><text x="466" y="232" fill="#6f6d67" font-size="20">SKUs</text><text x="778" y="232" fill="#6f6d67" font-size="20">Lots + Stock</text>
+    <text x="154" y="302" fill="#3b3b38" font-size="24">Botanicals Co.</text><text x="154" y="366" fill="#3b3b38" font-size="24">Pure Oils</text><text x="154" y="430" fill="#3b3b38" font-size="24">Packaging Hub</text>
+    <text x="466" y="302" fill="#3b3b38" font-size="24">SHEA-12</text><text x="466" y="366" fill="#3b3b38" font-size="24">ROSE-07</text><text x="466" y="430" fill="#3b3b38" font-size="24">COCO-22</text>
+    <text x="778" y="302" fill="#3b3b38" font-size="24">Lot SB-1024</text><text x="778" y="366" fill="#3b3b38" font-size="24">Lot SB-1025</text><text x="778" y="430" fill="#3b3b38" font-size="24">Lot SB-1026</text>
+  </g>
+  <g fill="#0aa79d"><rect x="778" y="502" width="220" height="18" rx="9"/><rect x="778" y="542" width="152" height="18" rx="9"/></g>
+  <rect x="154" y="278" width="194" height="40" rx="20" fill="#0aa79d" opacity=".16"/>
+  <rect x="466" y="278" width="126" height="40" rx="20" fill="#0aa79d" opacity=".16"/>
+</svg>

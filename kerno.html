@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kerno workflow command center demo." />
+    <title>Kerno | Workflow Command Center Demo</title>
+    <link
+      rel="icon"
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%23009f93"/><path d="M18 17h28v8H27v8h16v8H27v12h-9z" fill="%23fffefa"/></svg>'
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#demo">Skip to demo</a>
+
+    <header class="topbar" aria-label="Primary">
+      <a class="brand brand-subtle" href="#top" aria-label="Kerno">
+        <img class="brand-logo" src="/kerno-logo.png" alt="" />
+        <span>Kerno</span>
+      </a>
+      <button class="theme-toggle magnetic" type="button" aria-label="Toggle light or dark mode" data-theme-toggle>
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        <span>Mode</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="intro demo-hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Kerno Workflow Demo</p>
+        <h1 id="hero-title" class="visually-hidden">Kerno workflow demo</h1>
+      </section>
+
+      <section class="demo-showcase" id="demo" aria-label="Kerno workflow video demo" data-display="direct">
+        <div class="display-toggle" role="tablist" aria-label="Display mode">
+          <button type="button" class="display-toggle-btn is-active" data-display-mode="direct" role="tab" aria-selected="true">Direct UI</button>
+          <button type="button" class="display-toggle-btn" data-display-mode="monitor" role="tab" aria-selected="false">On monitor</button>
+        </div>
+        <div class="demo-workbench">
+          <article class="demo-feature demo-feature--dashboard">
+            <div class="demo-player-card">
+              <div class="demo-player-shell">
+                <video
+                  class="workflow-video"
+                  src="/assets/videos/kerno-dashboard-demo.mp4"
+                  poster="/assets/videos/kerno-dashboard-poster.png"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+                <div class="video-fallback" data-fallback="dashboard" aria-hidden="true"></div>
+              </div>
+              <div class="demo-caption">
+                <span>Dashboard</span>
+                <strong>Dashboard activity comes alive.</strong>
+                <p>Production efficiency, batch progress, QA, tasks, and inventory signals update in one Kerno workspace.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-feature demo-feature--formula">
+            <div class="demo-player-card">
+              <div class="demo-player-shell">
+                <video
+                  class="workflow-video"
+                  src="/assets/videos/kerno-product-formula-demo.mp4"
+                  poster="/assets/videos/kerno-product-formula-poster.png"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+                <div class="video-fallback" data-fallback="formula" aria-hidden="true"></div>
+              </div>
+              <div class="demo-caption">
+                <span>Product Formula</span>
+                <strong>Create a batch from one product selection.</strong>
+                <p>Choose a product once and Kerno fills the formula ingredients, quantities, units, costs, and downstream batch sections so production can start cleanly.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-feature demo-feature--qa">
+            <div class="demo-player-card">
+              <div class="demo-player-shell">
+                <video
+                  class="workflow-video"
+                  src="/assets/videos/kerno-qa-management-demo.mp4"
+                  poster="/assets/videos/kerno-qa-management-poster.png"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+                <div class="video-fallback" data-fallback="qa" aria-hidden="true"></div>
+              </div>
+              <div class="demo-caption">
+                <span>QA Management</span>
+                <strong>Criteria become a release-ready QA workflow.</strong>
+                <p>Entered QA criteria become a manager checklist, with item approvals, PIN verification, and final batch completion handled in one controlled flow.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-feature demo-feature--inventory">
+            <div class="demo-player-card">
+              <div class="demo-player-shell">
+                <video
+                  class="workflow-video"
+                  src="/assets/videos/kerno-inventory-management-demo.mp4"
+                  poster="/assets/videos/kerno-inventory-management-poster.png"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+                <div class="video-fallback" data-fallback="inventory" aria-hidden="true"></div>
+              </div>
+              <div class="demo-caption">
+                <span>Inventory Management</span>
+                <strong>Vendors, SKUs, lots, and stock signals connect.</strong>
+                <p>Kerno connects vendors, SKUs, lot numbers, and live stock indicators so buyers can see inventory risk before it slows production.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="kerno-flow" id="kernoFlow" aria-labelledby="kernoTitle" data-loop-phase="idle">
+        <div class="kerno-stage">
+          <div class="kerno-copy-panel">
+            <h2 id="kernoTitle">Kerno helps write<br />your story.</h2>
+            <span class="copy-swoosh" aria-hidden="true"></span>
+            <p>People and numbers are the heart of every business. We filter out the noise to get to what makes sense.</p>
+          </div>
+
+          <div class="manual-chaos" aria-label="Manual work before Kerno">
+            <!-- Each item is hidden by default and only appears during its own cycle phase.
+                 An item enters from off-screen left (placed by a brief hand silhouette),
+                 settles briefly at the drop point, then is absorbed into the Kerno core.
+                 It never returns — the next cycle introduces the next input. -->
+            <article class="sticky-note sticky-note--stock flow-token cycle-item cycle-item--stock" aria-hidden="true">
+              <span>Coconut oil down to<br />10 lb - reorder before<br />Friday lotion run</span>
+            </article>
+            <div class="spreadsheet-token spreadsheet-token--b flow-token cycle-item cycle-item--batch" data-file="Batch_Creator_Queue.xlsx" aria-hidden="true"></div>
+            <article class="sticky-note sticky-note--vendor flow-token cycle-item cycle-item--po" aria-hidden="true">
+              <span>Vanilla Haze still owes<br />ETA on PO #4421 -<br />call before noon</span>
+            </article>
+            <div class="spreadsheet-token spreadsheet-token--a flow-token cycle-item cycle-item--impact" data-file="Inventory_Stockouts_Week22.xlsx" aria-hidden="true"></div>
+            <!-- Hand silhouette — moves in from off-screen left to place each item,
+                 then retracts. Single shared element; CSS retimes per phase. -->
+            <span class="ingest-hand" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="64" height="64">
+                <path d="M2 36 L18 30 C22 28, 28 27, 34 28 L48 30 L48 38 L34 42 C28 44, 22 44, 18 42 L2 42 Z"
+                      fill="#d8c2a3" stroke="#a78663" stroke-width="0.8" stroke-linejoin="round"/>
+                <path d="M14 30 L14 22 C14 19, 18 19, 18 22 L18 30"
+                      fill="#d8c2a3" stroke="#a78663" stroke-width="0.6"/>
+                <path d="M22 28 L22 19 C22 16, 26 16, 26 19 L26 29"
+                      fill="#d8c2a3" stroke="#a78663" stroke-width="0.6"/>
+                <path d="M30 28 L30 21 C30 18, 34 18, 34 21 L34 29"
+                      fill="#d8c2a3" stroke="#a78663" stroke-width="0.6"/>
+                <path d="M38 28 L38 23 C38 21, 42 21, 42 23 L42 30"
+                      fill="#d8c2a3" stroke="#a78663" stroke-width="0.6"/>
+              </svg>
+            </span>
+          </div>
+
+          <div class="kerno-engine" aria-label="Kerno processing engine">
+            <div class="funnel-line funnel-line--left" aria-hidden="true"></div>
+            <div class="kerno-core" id="kernoMark">
+              <div class="processing-orbit" aria-hidden="true"></div>
+              <img src="/kerno-logo.png" alt="Kerno logo" class="kerno-logo" />
+              <span class="processing-label" id="processingLabel">Reading inputs</span>
+            </div>
+            <div class="funnel-line funnel-line--right" aria-hidden="true"></div>
+          </div>
+
+          <div class="organized-output" aria-label="Organized Kerno output">
+            <div class="kerno-dashboard-preview kerno-module-field">
+              <div class="dash-main">
+                <div class="activity-strip dash-focus-surface" data-output="impact">
+                  <strong>Activity Summary</strong>
+                  <span data-output="impact" id="activityBadge">Production Efficiency: 87%</span>
+                </div>
+
+                <div class="dash-metrics">
+                  <article class="dash-metric dash-focus-surface dash-metric--progress" data-output="batch">
+                    <b id="metricProgressLabel">14 batches in progress</b>
+                    <span class="metric-delta" id="metricProgressDelta">+1 batch</span>
+                    <small id="metricProgressMeta">Production Cost</small>
+                    <strong id="metricProgressValue">$12,400</strong>
+                    <em id="metricProgressNote">Batch protected</em>
+                  </article>
+                  <article class="dash-metric dash-focus-surface dash-metric--waiting" data-output="stock">
+                    <b id="metricWaitingLabel">5 batches waiting</b>
+                    <span class="metric-delta" id="metricWaitingDelta">+$1,650 risk</span>
+                    <small id="metricWaitingMeta">Value at Risk</small>
+                    <strong id="metricWaitingValue">$6,200</strong>
+                    <em id="metricWaitingNote">Stock issue found</em>
+                  </article>
+                  <article class="dash-metric dash-focus-surface dash-metric--qa" data-output="po">
+                    <b id="metricQaLabel">Supplier follow-up</b>
+                    <span class="metric-delta" id="metricQaDelta">PO updated</span>
+                    <small id="metricQaMeta">PO Status</small>
+                    <strong id="metricQaValue">Awaiting date</strong>
+                    <em id="metricQaNote">Request sent</em>
+                  </article>
+                </div>
+
+                <div class="dash-grid">
+                  <article class="production-chart dash-focus-surface" data-output="chart">
+                    <div class="chart-head">
+                      <strong>Production Rate</strong>
+                      <span><i></i>Completed</span>
+                      <span><i></i>In progress</span>
+                    </div>
+                    <svg viewBox="0 0 360 180" role="img" aria-label="Production chart updating" class="prod-chart-svg">
+                      <path class="chart-grid" d="M24 28H336M24 64H336M24 100H336M24 136H336" />
+                      <path class="chart-fill" id="chartFill" d="M24 124 L76 102 L128 86 L180 52 L232 74 L284 102 L336 58 L336 154 L24 154 Z" />
+                      <path class="chart-line chart-line--done" id="chartDone" d="M24 124 L76 102 L128 86 L180 52 L232 74 L284 102 L336 58" />
+                      <path class="chart-line chart-line--work" id="chartWork" d="M24 140 L76 120 L128 130 L180 108 L232 144 L284 118 L336 96" />
+                      <!-- Live ticker dot — JS positions it at the rightmost endpoint of the done line -->
+                      <circle id="chartPulse" class="chart-pulse" cx="336" cy="58" r="3.4" />
+                      <circle id="chartPulseRing" class="chart-pulse-ring" cx="336" cy="58" r="3.4" />
+                    </svg>
+                  </article>
+
+                  <article class="stockout-card dash-focus-surface" data-output="stock">
+                    <strong id="stockoutTitle">Inventory Stockout</strong>
+                    <div class="mini-bars" aria-hidden="true">
+                      <span id="stockBarA" style="--bar: 52%"><b>25</b><em>Shea Butter</em></span>
+                      <span class="green" id="stockBarB" style="--bar: 90%"><b>45</b><em>Rose Extract</em></span>
+                      <span class="red" id="stockBarC" style="--bar: 22%"><b>10</b><em>Coconut Oil</em></span>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="dash-chips dash-focus-surface" data-output="impact" aria-label="Live operational updates">
+                  <span id="impactChipA">+ PO drafted</span>
+                  <span id="impactChipB">+ Batch queued</span>
+                  <span id="impactChipC">+ Cost risk flagged</span>
+                </div>
+
+                <article class="business-impact dash-focus-surface dash-focus-persistent" data-output="impact">
+                  <b id="impactTitle">Kerno turns the note into business movement.</b>
+                  <span id="impactBody">It detects the shortage, protects the waiting batch, drafts the supplier follow-up, and refreshes the dashboard so the team knows what changed.</span>
+                </article>
+              </div>
+
+              <div class="dash-action-menu" id="dashActionMenu" aria-hidden="true">
+                <button type="button" class="dash-action-item is-undo" id="dashUndoAction" tabindex="-1">Undo recent automation</button>
+                <button type="button" class="dash-action-item" tabindex="-1">View activity log</button>
+                <button type="button" class="dash-action-item" tabindex="-1">Open batch details</button>
+              </div>
+
+              <div class="dash-cursor" id="dashCursor" aria-hidden="true">
+                <span class="dash-cursor-tip"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="kerno-bottom-copy">
+            <strong>Numbers are the<br />core of every business.</strong>
+            <span class="copy-swoosh" aria-hidden="true"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/script.js"></script>
+  <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b885cd24268b4ca9bf0bc2f19086f898"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>
