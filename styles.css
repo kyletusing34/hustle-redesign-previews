@@ -1666,10 +1666,10 @@ h1 em {
   position: relative;
   min-height: 720px;
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(250px, 0.58fr) minmax(560px, 1.35fr);
-  grid-template-rows: minmax(180px, auto) minmax(330px, 1fr) minmax(120px, auto);
+  grid-template-columns: minmax(240px, 0.7fr) minmax(360px, 0.9fr) minmax(520px, 1.25fr);
+  grid-template-rows: minmax(150px, auto) minmax(360px, 1fr) minmax(140px, auto);
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem 1.4rem;
   overflow: hidden;
 }
 .kerno-stage::before {
@@ -1683,29 +1683,29 @@ h1 em {
   pointer-events: none;
 }
 .kerno-copy-panel {
-  grid-column: 1 / -1;
+  grid-column: 2;
   grid-row: 1;
   align-self: end;
   justify-self: center;
-  max-width: 31rem;
+  max-width: 24rem;
   text-align: center;
-  z-index: 2;
+  z-index: 5;
   pointer-events: none;
 }
 .kerno-copy-panel h2,
 .kerno-bottom-copy strong {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(2.05rem, 3vw, 3.2rem);
-  line-height: 1.12;
+  font-size: clamp(1.65rem, 2.2vw, 2.35rem);
+  line-height: 1.14;
   font-weight: 800;
 }
 .kerno-copy-panel p {
-  max-width: 34rem;
-  margin: 1rem auto 0;
+  max-width: 22rem;
+  margin: 0.9rem auto 0;
   color: var(--muted);
-  font-size: clamp(1rem, 1.2vw, 1.22rem);
-  line-height: 1.42;
+  font-size: clamp(0.95rem, 1.05vw, 1.08rem);
+  line-height: 1.44;
 }
 .copy-swoosh {
   display: block;
@@ -1719,8 +1719,9 @@ h1 em {
 .manual-chaos {
   position: relative;
   grid-column: 1;
-  grid-row: 1 / 4;
-  min-height: 560px;
+  grid-row: 2;
+  min-height: 360px;
+  align-self: stretch;
   z-index: 3;
 }
 .sticky-note,
@@ -2003,8 +2004,9 @@ h1 em {
 .organized-output {
   position: relative;
   grid-column: 3;
-  grid-row: 1 / 4;
-  min-height: 660px;
+  grid-row: 2;
+  min-height: 460px;
+  align-self: stretch;
   z-index: 3;
 }
 .output-card,
@@ -2157,18 +2159,18 @@ h1 em {
   font-size: 1.25rem;
 }
 .kerno-bottom-copy {
-  grid-column: 1 / -1;
+  grid-column: 2;
   grid-row: 3;
   align-self: start;
   justify-self: center;
-  max-width: 18rem;
+  max-width: 22rem;
   text-align: center;
-  z-index: 2;
+  z-index: 5;
   pointer-events: none;
 }
 .kerno-bottom-copy strong {
   display: block;
-  font-size: clamp(1.75rem, 2.3vw, 2.6rem);
+  font-size: clamp(1.5rem, 2vw, 2.05rem);
 }
 .kerno-flow[data-loop-phase="batch"] [data-output="batch"],
 .kerno-flow[data-loop-phase="stock"] [data-output="stock"],
@@ -2183,7 +2185,8 @@ h1 em {
 .kerno-dashboard-preview {
   position: relative;
   display: block;
-  min-height: 670px;
+  min-height: 460px;
+  height: 100%;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -2333,7 +2336,7 @@ h1 em {
 .dash-main {
   min-width: 0;
   position: relative;
-  min-height: 670px;
+  min-height: 460px;
   padding: 1.05rem;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
