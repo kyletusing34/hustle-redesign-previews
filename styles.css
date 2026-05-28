@@ -1689,7 +1689,8 @@ h1 em {
   justify-self: center;
   max-width: 31rem;
   text-align: center;
-  z-index: 5;
+  z-index: 2;
+  pointer-events: none;
 }
 .kerno-copy-panel h2,
 .kerno-bottom-copy strong {
@@ -2142,7 +2143,8 @@ h1 em {
   justify-self: center;
   max-width: 18rem;
   text-align: center;
-  z-index: 5;
+  z-index: 2;
+  pointer-events: none;
 }
 .kerno-bottom-copy strong {
   display: block;
