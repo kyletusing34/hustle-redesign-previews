@@ -1661,17 +1661,17 @@ h1 em {
   position: relative;
   width: min(var(--max), calc(100% - 2rem));
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2rem) 0 clamp(4rem, 8vw, 7rem);
+  padding: clamp(0.75rem, 2vw, 1.25rem) 0 clamp(1.75rem, 3.5vw, 3rem);
   --kerno-loop: 55.9s;
 }
 .kerno-stage {
   position: relative;
-  min-height: 720px;
+  min-height: 480px;
   display: grid;
   grid-template-columns: minmax(240px, 0.7fr) minmax(360px, 0.9fr) minmax(520px, 1.25fr);
-  grid-template-rows: minmax(150px, auto) minmax(360px, 1fr) minmax(140px, auto);
+  grid-template-rows: minmax(96px, auto) minmax(300px, auto) minmax(88px, auto);
   align-items: center;
-  gap: 1rem 1.4rem;
+  gap: 0.4rem 1.4rem;
   overflow: hidden;
 }
 .kerno-stage::before {
@@ -4604,7 +4604,7 @@ h1 em {
 }
 
 /* ---------- Cycle items: one-way ingestion ----------
-   Each phase animates exactly one .cycle-item over its full duration (5500ms).
+   Each phase animates exactly one .cycle-item over its full duration (4600ms).
    The motion is a single forward arc with NO return — the item is absorbed.
    Beats inside one phase animation:
      0-3%    item off-screen left, invisible
@@ -4644,10 +4644,10 @@ h1 em {
   72%  { opacity: 0; transform: translate3d(220px, 40px, 0) rotate(0deg) scale(0.34); }
   100% { opacity: 0; transform: translate3d(220px, 40px, 0) rotate(0deg) scale(0.3); }
 }
-.kerno-flow[data-loop-phase="cycle-stock"]  .cycle-item--stock  { animation: ingestStock  5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
-.kerno-flow[data-loop-phase="cycle-batch"]  .cycle-item--batch  { animation: ingestBatch  5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
-.kerno-flow[data-loop-phase="cycle-po"]     .cycle-item--po     { animation: ingestPo     5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
-.kerno-flow[data-loop-phase="cycle-impact"] .cycle-item--impact { animation: ingestImpact 5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
+.kerno-flow[data-loop-phase="cycle-stock"]  .cycle-item--stock  { animation: ingestStock  4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
+.kerno-flow[data-loop-phase="cycle-batch"]  .cycle-item--batch  { animation: ingestBatch  4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
+.kerno-flow[data-loop-phase="cycle-po"]     .cycle-item--po     { animation: ingestPo     4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
+.kerno-flow[data-loop-phase="cycle-impact"] .cycle-item--impact { animation: ingestImpact 4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both !important; opacity: 0; }
 
 /* ---------- Ingest hand silhouette ----------
    Single shared hand. Per phase, the hand is positioned at the same drop
@@ -4674,10 +4674,10 @@ h1 em {
   44%  { opacity: 0; transform: translate3d(-300px, 22px, 0) rotate(-14deg); }
   100% { opacity: 0; transform: translate3d(-360px, 14px, 0) rotate(-8deg); }
 }
-.kerno-flow[data-loop-phase="cycle-stock"]  .ingest-hand { left: 8%  !important; top: 22% !important; animation: handPlace 5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
-.kerno-flow[data-loop-phase="cycle-batch"]  .ingest-hand { left: 18% !important; top: 48% !important; animation: handPlace 5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
-.kerno-flow[data-loop-phase="cycle-po"]     .ingest-hand { left: 6%  !important; top: 64% !important; animation: handPlace 5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
-.kerno-flow[data-loop-phase="cycle-impact"] .ingest-hand { left: 22% !important; top: 28% !important; animation: handPlace 5500ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
+.kerno-flow[data-loop-phase="cycle-stock"]  .ingest-hand { left: 8%  !important; top: 22% !important; animation: handPlace 4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
+.kerno-flow[data-loop-phase="cycle-batch"]  .ingest-hand { left: 18% !important; top: 48% !important; animation: handPlace 4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
+.kerno-flow[data-loop-phase="cycle-po"]     .ingest-hand { left: 6%  !important; top: 64% !important; animation: handPlace 4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
+.kerno-flow[data-loop-phase="cycle-impact"] .ingest-hand { left: 22% !important; top: 28% !important; animation: handPlace 4600ms cubic-bezier(0.32, 0.72, 0.30, 1) both; }
 
 /* ---------- Kerno core: absorption pulse ----------
    Pulse fires near the end of each cycle (when the item is being absorbed),
@@ -4688,7 +4688,7 @@ h1 em {
   100% { box-shadow: 0 0 0 0 rgba(10, 167, 157, 0.00); transform: scale(1); }
 }
 .kerno-flow[data-loop-phase^="cycle-"] .kerno-core {
-  animation: kernoCoreAbsorb 900ms cubic-bezier(0.22, 1, 0.36, 1) 3050ms 1 !important;
+  animation: kernoCoreAbsorb 900ms cubic-bezier(0.22, 1, 0.36, 1) 2550ms 1 !important;
 }
 
 /* Funnel lines: light up just as ingestion happens */
@@ -5154,8 +5154,10 @@ h1 em {
      out with their CURRENT state, then fade back in fresh once the
      next state has been rendered. Removes the visible "snap back".
    ============================================================= */
-.kerno-flow.data-stale .activity-strip,
-.kerno-flow.data-stale .dash-metric,
+/* Persistent anchors (.activity-strip + the waiting metric) are excluded here so
+   the dashboard always shows a few live elements — they never fully fade out,
+   their values just tween between phases. Everything else fades on phase change. */
+.kerno-flow.data-stale .dash-metric:not(.dash-metric--waiting),
 .kerno-flow.data-stale .production-chart,
 .kerno-flow.data-stale .stockout-card,
 .kerno-flow.data-stale .dash-chips,

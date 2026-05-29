@@ -146,7 +146,7 @@ function initKernoFlow() {
   // point. The seam between cycle-impact → cycle-stock is invisible because both
   // sides of the seam look identical: no item visible, no module pinned (both about
   // to enter / fade out in the next 200ms).
-  const CYCLE = 5500;
+  const CYCLE = 4600;
   const phases = [
     { name: "idle",         label: "Reading the floor",          duration: 600 },
     { name: "cycle-stock",  label: "Stock note → shortage alert", duration: CYCLE },
@@ -596,7 +596,7 @@ function initKernoFlow() {
   //   t=0      .data-stale added → every module fades out (380ms) with CURRENT
   //            data still in the DOM, so the user sees the previous cycle's
   //            changes hold all the way out.
-  //   t=2900   .data-stale removed AND renderDashboardState fires. Modules
+  //   t=1400   .data-stale removed AND renderDashboardState fires. Modules
   //            matching the new phase fade back in (560ms) while values tween
   //            from previous → new live in front of the user.
   // This means persistent modules visibly disappear between cycles instead of
@@ -616,7 +616,7 @@ function initKernoFlow() {
       renderTimer = window.setTimeout(() => {
         section.classList.remove("data-stale");
         renderDashboardState(nextStateName);
-      }, 2900);
+      }, 1400);
     } else {
       section.classList.remove("data-stale");
       renderDashboardState(nextStateName);
