@@ -9,13 +9,15 @@
   --quiet: #aaa59b;
   --line: rgba(44, 43, 38, 0.12);
   --line-strong: rgba(44, 43, 38, 0.2);
-  --accent: #0aa79d;
-  --accent-dark: #00685f;
-  --orange: #ff8a12;
-  --yellow: #ffba23;
-  --blue: #176bc2;
-  --green: #03a95a;
-  --red: #ee120c;
+  /* Exact Kerno brand palette — sampled from the real app + NB Kerno Figma */
+  --accent: #18a195;        /* Kerno table-header / primary teal */
+  --accent-bright: #21c7b0; /* Kerno logo ring teal (glow/highlights) */
+  --accent-dark: #0c6b62;   /* Kerno "Create a Batch" button teal */
+  --orange: #e8821e;        /* Kerno "in progress" / batches orange */
+  --yellow: #f3b01c;        /* Kerno batch-rate bars / edit / value-at-risk gold */
+  --blue: #1f5fb0;          /* Kerno pending-QA / chart blue */
+  --green: #1aa85a;         /* Kerno completed / production-efficiency green */
+  --red: #df3b3b;           /* Kerno overdue / delete / critical red */
   --shadow: 0 22px 60px rgba(59, 55, 45, 0.14);
   --shadow-strong: 0 30px 90px rgba(58, 54, 45, 0.2);
   --radius: 18px;
@@ -1289,8 +1291,8 @@ h1 em {
   border-radius: 999px;
   vertical-align: middle;
 }
-.dashboard-legend .is-green::before { background: #0ba85c; }
-.dashboard-legend .is-orange::before { background: #ff8a12; }
+.dashboard-legend .is-green::before { background: #1aa85a; }
+.dashboard-legend .is-orange::before { background: #e8821e; }
 .dashboard-line-svg {
   width: 100%;
   height: 170px;
@@ -1300,16 +1302,16 @@ h1 em {
 .dashboard-line-fill {
   opacity: 0.16;
 }
-.dashboard-line-fill--green { fill: #0ba85c; }
-.dashboard-line-fill--orange { fill: #ff8a12; }
+.dashboard-line-fill--green { fill: #1aa85a; }
+.dashboard-line-fill--orange { fill: #e8821e; }
 .dashboard-line {
   fill: none;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.dashboard-line--green { stroke: #0ba85c; }
-.dashboard-line--orange { stroke: #ff8a12; }
+.dashboard-line--green { stroke: #1aa85a; }
+.dashboard-line--orange { stroke: #e8821e; }
 .dashboard-chart-labels {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -1359,8 +1361,8 @@ h1 em {
 .dashboard-qa-bar:nth-child(1) span { background: #176bc2; }
 .dashboard-qa-bar:nth-child(2) span { background: #176bc2; }
 .dashboard-qa-bar:nth-child(3) span { background: #ee120c; }
-.dashboard-stock-bar:nth-child(1) span { background: #ff8a12; }
-.dashboard-stock-bar:nth-child(2) span { background: #0ba85c; }
+.dashboard-stock-bar:nth-child(1) span { background: #e8821e; }
+.dashboard-stock-bar:nth-child(2) span { background: #1aa85a; }
 .dashboard-stock-bar:nth-child(3) span { background: #ee120c; }
 .dashboard-stock-bar:nth-child(4) span { background: #ffba23; }
 .dashboard-qa-bar em,
@@ -1411,8 +1413,8 @@ h1 em {
 }
 .task-status-pill.is-gold { background: #ffba23; color: #805400; }
 .task-status-pill.is-blue { background: #176bc2; }
-.task-status-pill.is-orange { background: #ff8a12; }
-.task-status-pill.is-green { background: #0ba85c; }
+.task-status-pill.is-orange { background: #e8821e; }
+.task-status-pill.is-green { background: #1aa85a; }
 .dashboard-rank-list {
   display: grid;
   gap: 0.58rem;
