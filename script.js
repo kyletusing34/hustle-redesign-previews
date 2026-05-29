@@ -147,6 +147,12 @@ function initKernoFlow() {
   // sides of the seam look identical: no item visible, no module pinned (both about
   // to enter / fade out in the next 200ms).
   const CYCLE = 4600;
+  // The cycle-item glides into the Kerno core between 55% and 72% of the cycle
+  // (see the ingest* keyframes in styles.css; the core absorb-pulse fires at
+  // 2550ms). We update the dashboard the moment the note is absorbed — so cause
+  // (note ingested) and effect (modules/graphs change) happen together — and the
+  // resulting state then holds, fully visible, until the NEXT note is ingested.
+  const INGEST_BEAT = 3100;
   const phases = [
     { name: "idle",         label: "Reading the floor",          duration: 600 },
     { name: "cycle-stock",  label: "Stock note → shortage alert", duration: CYCLE },
@@ -593,14 +599,16 @@ function initKernoFlow() {
   let running = false;
 
   // Phase change choreography:
-  //   t=0      .data-stale added → every module fades out (380ms) with CURRENT
-  //            data still in the DOM, so the user sees the previous cycle's
-  //            changes hold all the way out.
-  //   t=1400   .data-stale removed AND renderDashboardState fires. Modules
-  //            matching the new phase fade back in (560ms) while values tween
-  //            from previous → new live in front of the user.
-  // This means persistent modules visibly disappear between cycles instead of
-  // showing stale data, and the live update happens during a clean reveal.
+  //   t=0          new phase begins: the item starts gliding in from off-screen
+  //                left, but the dashboard KEEPS showing the previous cycle's
+  //                state — modules/graphs stay fully on screen and readable the
+  //                whole time the note is travelling in. Nothing is blanked.
+  //   t=INGEST_BEAT the note merges into the Kerno core (the actual ingestion).
+  //                Only now does renderDashboardState fire, so values tween,
+  //                chart lines redraw, and cards flash live in place. That new
+  //                state then persists until the NEXT note is ingested.
+  // Net effect: every change stays visible until the next document is ingested,
+  // giving the viewer time to read what happened, and the charts visibly change.
   function setPhase(index) {
     phaseIndex = index % phases.length;
     const phase = phases[phaseIndex];
@@ -608,17 +616,15 @@ function initKernoFlow() {
     section.dataset.dashboardFocus = phaseFocusMap[phase.name] || "none";
     label.textContent = phase.label;
     window.clearTimeout(renderTimer);
+    // Never blank the dashboard — the previous state must hold until ingestion.
+    section.classList.remove("data-stale");
     const nextStateName = phaseStateMap[phase.name];
     if (phase.name.startsWith("cycle-")) {
-      // Force all modules to fade out with current values intact.
-      section.classList.add("data-stale");
-      // Reveal + update simultaneously so the tween plays inside the visible module.
+      // Update in place exactly when the note is absorbed by the core.
       renderTimer = window.setTimeout(() => {
-        section.classList.remove("data-stale");
         renderDashboardState(nextStateName);
-      }, 1400);
+      }, INGEST_BEAT);
     } else {
-      section.classList.remove("data-stale");
       renderDashboardState(nextStateName);
     }
   }
